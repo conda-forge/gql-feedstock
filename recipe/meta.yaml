@@ -1,8 +1,8 @@
 {% set name = "gql" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 {% set file_ext = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "d20cf1eb1c6d54558174a3dcc3cf1ca0e07678cb1123804c2e165838238350f4" %}
+{% set hash_value = "ad0f0b8226428d727c8e1d1cac4e521d83ed024d814921bd55b8adb997dadf4b" %}
 
 package:
   name: '{{ name|lower }}'
