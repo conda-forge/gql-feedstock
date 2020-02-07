@@ -19,9 +19,9 @@ build:
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - six >=1.10.0
