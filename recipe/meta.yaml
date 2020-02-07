@@ -25,8 +25,9 @@ requirements:
   run:
     - python
     - six >=1.10.0
-    - graphql-core >=0.5.0
-    - promise >=0.4.0
+    - graphql-core >=2,<3
+    - promise >=2.0,<3
+    - requests >=2.12,<3
 
 test:
   imports:
