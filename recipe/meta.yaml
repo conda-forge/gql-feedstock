@@ -1,8 +1,8 @@
 {% set name = "gql" %}
-{% set version = "0.1.0" %}
+{% set version = "0.3.0" %}
 {% set file_ext = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "d20cf1eb1c6d54558174a3dcc3cf1ca0e07678cb1123804c2e165838238350f4" %}
+{% set hash_value = "42c03890f8475f46751939dedbd276b471463b5f2345c9c54b6cf84d9e58b1e8" %}
 
 package:
   name: '{{ name|lower }}'
@@ -16,17 +16,18 @@ source:
 build:
   noarch: python
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - six >=1.10.0
-    - graphql-core >=0.5.0
-    - promise >=0.4.0
+    - graphql-core >=2,<3
+    - promise >=2.0,<3
+    - requests >=2.12,<3
 
 test:
   imports:
@@ -44,3 +45,4 @@ about:
 extra:
   recipe-maintainers:
     - ozagordi
+    - KingDarBoja
