@@ -1,22 +1,19 @@
 {% set name = "gql" %}
-{% set version = "0.3.0" %}
-{% set file_ext = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "42c03890f8475f46751939dedbd276b471463b5f2345c9c54b6cf84d9e58b1e8" %}
+{% set version = "0.4.0" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.{{ file_ext }}'
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
-  '{{ hash_type }}': '{{ hash_value }}'
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 259b0c66d8dfe61feb06fe45b57713da0fe2e5ca13fa500a1fafc9bf2f195e81
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -38,10 +35,9 @@ about:
   home: https://github.com/graphql-python/gql
   license: MIT
   license_family: MIT
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
   summary: GraphQL client for Python
-  description: "This is a GraphQL client for Python. Plays nicely with graphene, graphql-core, graphql-js and\
-    any other GraphQL implementation compatible with the spec."
+  description: This is a GraphQL client for Python. Plays nicely with graphene, graphql-core, graphql-js andany other GraphQL implementation compatible with the spec.
 extra:
   recipe-maintainers:
     - ozagordi
