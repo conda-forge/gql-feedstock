@@ -5,11 +5,11 @@ Home: https://github.com/graphql-python/gql
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: GraphQL client for Python
 
-This is a GraphQL client for Python. Plays nicely with graphene, graphql-core, graphql-js andany other GraphQL implementation compatible with the spec.
+This is a GraphQL client for Python. Plays nicely with graphene, graphql-core, graphql-js and any other GraphQL implementation compatible with the spec.
 
 Current build status
 ====================
