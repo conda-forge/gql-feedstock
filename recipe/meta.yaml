@@ -1,5 +1,5 @@
 {% set name = "gql" %}
-{% set version = "2.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fe8d3a08047f77362ddfcfddba7cae377da2dd66f5e61c59820419c9283d4fb5
+  sha256: 4b33029e9214aabd2609f3457b8a158b29a3134b193998c9b701785ba31c7ed3
 
 build:
   noarch: python
