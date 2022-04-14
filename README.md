@@ -5,11 +5,13 @@ Home: https://github.com/graphql-python/gql
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gql-feedstock/blob/main/LICENSE.txt)
 
 Summary: GraphQL client for Python
 
-This is a GraphQL client for Python. Plays nicely with graphene, graphql-core, graphql-js andany other GraphQL implementation compatible with the spec.
+This is a GraphQL client for Python. Plays nicely with graphene,
+graphql-core, graphql-js and any other GraphQL implementation compatible
+with the spec.
 
 Current build status
 ====================
@@ -17,8 +19,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5590&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gql-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5590&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gql-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -30,6 +32,11 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql-green.svg)](https://anaconda.org/conda-forge/gql) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql.svg)](https://anaconda.org/conda-forge/gql) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql.svg)](https://anaconda.org/conda-forge/gql) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql.svg)](https://anaconda.org/conda-forge/gql) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--aiohttp-green.svg)](https://anaconda.org/conda-forge/gql-with-aiohttp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-aiohttp.svg)](https://anaconda.org/conda-forge/gql-with-aiohttp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-aiohttp.svg)](https://anaconda.org/conda-forge/gql-with-aiohttp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-aiohttp.svg)](https://anaconda.org/conda-forge/gql-with-aiohttp) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--all-green.svg)](https://anaconda.org/conda-forge/gql-with-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-all.svg)](https://anaconda.org/conda-forge/gql-with-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-all.svg)](https://anaconda.org/conda-forge/gql-with-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-all.svg)](https://anaconda.org/conda-forge/gql-with-all) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--botocore-green.svg)](https://anaconda.org/conda-forge/gql-with-botocore) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-botocore.svg)](https://anaconda.org/conda-forge/gql-with-botocore) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-botocore.svg)](https://anaconda.org/conda-forge/gql-with-botocore) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-botocore.svg)](https://anaconda.org/conda-forge/gql-with-botocore) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--requests-green.svg)](https://anaconda.org/conda-forge/gql-with-requests) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-requests.svg)](https://anaconda.org/conda-forge/gql-with-requests) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-requests.svg)](https://anaconda.org/conda-forge/gql-with-requests) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-requests.svg)](https://anaconda.org/conda-forge/gql-with-requests) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--websockets-green.svg)](https://anaconda.org/conda-forge/gql-with-websockets) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-websockets.svg)](https://anaconda.org/conda-forge/gql-with-websockets) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-websockets.svg)](https://anaconda.org/conda-forge/gql-with-websockets) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-websockets.svg)](https://anaconda.org/conda-forge/gql-with-websockets) |
 
 Installing gql
 ==============
@@ -38,25 +45,52 @@ Installing `gql` from the `conda-forge` channel can be achieved by adding `conda
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `gql` can be installed with:
+Once the `conda-forge` channel has been enabled, `gql, gql-with-aiohttp, gql-with-all, gql-with-botocore, gql-with-requests, gql-with-websockets` can be installed with `conda`:
 
 ```
-conda install gql
+conda install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-requests gql-with-websockets
 ```
 
-It is possible to list all of the versions of `gql` available on your platform with:
+or with `mamba`:
+
+```
+mamba install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-requests gql-with-websockets
+```
+
+It is possible to list all of the versions of `gql` available on your platform with `conda`:
 
 ```
 conda search gql --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search gql --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search gql --channel conda-forge
+
+# List packages depending on `gql`:
+mamba repoquery whoneeds gql --channel conda-forge
+
+# List dependencies of `gql`:
+mamba repoquery depends gql --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -66,10 +100,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
@@ -108,14 +144,15 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
 =====================
 
 * [@KingDarBoja](https://github.com/KingDarBoja/)
+* [@bollwyvl](https://github.com/bollwyvl/)
 * [@ozagordi](https://github.com/ozagordi/)
 
