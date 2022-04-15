@@ -154,5 +154,6 @@ Feedstock Maintainers
 
 * [@KingDarBoja](https://github.com/KingDarBoja/)
 * [@bollwyvl](https://github.com/bollwyvl/)
+* [@leszekhanusz](https://github.com/leszekhanusz/)
 * [@ozagordi](https://github.com/ozagordi/)
 
