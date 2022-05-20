@@ -1,4 +1,5 @@
-{% set version = "3.2.0" %}
+{% set min_python = "python >=3.6" %}
+{% set version = "3.3.0" %}
 {% set min_python = "python >=3.6" %}
 
 package:
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/gql/gql-{{ version }}.tar.gz
-  sha256: 026b1c6b605cb9d6f4885ca5d8b1873a686a5b81842f356a834141bf123d4975
+  sha256: efa405aebe0e7b2fe342b43cfc70fd57e2e385fcae04f79c509366ad48a64381
 
 build:
   noarch: python
