@@ -1,5 +1,5 @@
 {% set min_python = "python >=3.6" %}
-{% set version = "3.3.0" %}
+{% set version = "3.4.0" %}
 {% set min_python = "python >=3.6" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/gql/gql-{{ version }}.tar.gz
-  sha256: efa405aebe0e7b2fe342b43cfc70fd57e2e385fcae04f79c509366ad48a64381
+  sha256: ca81aa8314fa88a8c57dd1ce34941278e0c352d762eb721edcba0387829ea7c0
 
 build:
   noarch: python
@@ -41,6 +41,7 @@ outputs:
         - {{ min_python }}
         - graphql-core >=3.2,<3.3
         - yarl >=1.6,<2.0
+        - backoff >=1.11.1,<3.0
       run_constrained:
         # aiohttp
         - aiohttp >=3.7.1,<3.9.0
