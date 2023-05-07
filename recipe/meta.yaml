@@ -1,5 +1,4 @@
-{% set min_python = "python >=3.6" %}
-{% set version = "3.4.0" %}
+{% set version = "3.4.1" %}
 {% set min_python = "python >=3.6" %}
 
 package:
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/gql/gql-{{ version }}.tar.gz
-  sha256: ca81aa8314fa88a8c57dd1ce34941278e0c352d762eb721edcba0387829ea7c0
+  sha256: 11dc5d8715a827f2c2899593439a4f36449db4f0eafa5b1ea63948f8a2f8c545
 
 build:
   noarch: python
@@ -48,7 +47,7 @@ outputs:
         # requests
         - requests >=2.26,<3
         - requests-toolbelt >=0.9.1,<1
-        - urllib3 >=1.26
+        - urllib3 >=1.26,<2
         # websockets
         - websockets >=10,<11
         # boto
@@ -184,7 +183,7 @@ outputs:
         - parse
         - pip
         - pytest
-        - pytest-asyncio
+        - pytest-asyncio >=0.16.0,<0.19.0
         - pytest-console-scripts
         - pytest-cov
         - vcrpy
