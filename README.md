@@ -3,6 +3,7 @@ About gql-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gql-feedstock/blob/main/LICENSE.txt)
 
+
 About gql
 ---------
 
@@ -15,6 +16,7 @@ Summary: GraphQL client for Python
 This is a GraphQL client for Python. Plays nicely with graphene,
 graphql-core, graphql-js and any other GraphQL implementation compatible
 with the spec.
+
 About gql-with-aiohttp
 ----------------------
 
@@ -23,6 +25,7 @@ About gql-with-aiohttp
 Package license: 
 
 Summary: GraphQL client for Python - aiohttp transport
+
 About gql-with-botocore
 -----------------------
 
@@ -31,6 +34,7 @@ About gql-with-botocore
 Package license: 
 
 Summary: GraphQL client for Python - boto transport
+
 About gql-with-requests
 -----------------------
 
@@ -39,6 +43,7 @@ About gql-with-requests
 Package license: 
 
 Summary: GraphQL client for Python - requests transport
+
 About gql-with-websockets
 -------------------------
 
