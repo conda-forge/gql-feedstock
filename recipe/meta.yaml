@@ -68,11 +68,10 @@ outputs:
     requirements:
       host:
         - {{ min_python }}
-        - pip
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - aiohttp
         - {{ min_python }}
+        - aiohttp
     test:
       imports:
         - gql
@@ -92,7 +91,6 @@ outputs:
     requirements:
       host:
         - {{ min_python }}
-        - pip
       run:
         - {{ pin_subpackage('gql', exact=True) }}
         - {{ min_python }}
@@ -116,7 +114,6 @@ outputs:
     requirements:
       host:
         - {{ min_python }}
-        - pip
       run:
         - {{ pin_subpackage('gql', exact=True) }}
         - {{ min_python }}
@@ -142,7 +139,6 @@ outputs:
     requirements:
       host:
         - {{ min_python }}
-        - pip
       run:
         - {{ pin_subpackage('gql', exact=True) }}
         - {{ min_python }}
@@ -166,11 +162,10 @@ outputs:
     requirements:
       host:
         - {{ min_python }}
-        - pip
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - botocore
         - {{ min_python }}
+        - botocore
     test:
       imports:
         - gql
@@ -190,7 +185,6 @@ outputs:
     requirements:
       host:
         - {{ min_python }}
-        - pip
       run:
         - {{ pin_subpackage('gql-with-aiohttp', exact=True) }}
         - {{ pin_subpackage('gql-with-httpx', exact=True) }}
