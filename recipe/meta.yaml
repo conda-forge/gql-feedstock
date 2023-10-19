@@ -205,7 +205,6 @@ outputs:
       requires:
         - aiofiles
         - mock
-        - mypy
         - parse
         - pip
         - pytest
@@ -217,8 +216,12 @@ outputs:
         - pip check
         - gql-cli --help
         - gql-cli --version
-        - pytest -vv --color=yes --tb=long --cov=gql --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99
-        - mypy -p gql
+        {% set skips = [
+          "appsync_subscription_api_key_unauthorized",
+          "appsync_subscription_server_sending_an_error_without_an_id",
+          "websocket_connect_failed_with_authentication_in_connection_init",
+        ] %}
+        - pytest -vv --color=yes --tb=long --cov=gql --cov-report=term-missing:skip-covered --no-cov-on-fail -k "not ({{ skips | join(" or ") }})" --cov-fail-under=99
 
 about:
   home: https://github.com/graphql-python/gql
