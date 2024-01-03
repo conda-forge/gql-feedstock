@@ -42,7 +42,7 @@ About gql-with-httpx
 
 Package license: 
 
-Summary: GraphQL client for Python - aiohttp transport
+Summary: GraphQL client for Python - httpx transport
 
 About gql-with-requests
 -----------------------
@@ -91,14 +91,14 @@ Current release info
 Installing gql
 ==============
 
-Installing `gql` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `gql` from the `conda-forge/label/gql_beta` channel can be achieved by adding `conda-forge/label/gql_beta` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/gql_beta
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `gql, gql-with-aiohttp, gql-with-all, gql-with-botocore, gql-with-httpx, gql-with-requests, gql-with-websockets` can be installed with `conda`:
+Once the `conda-forge/label/gql_beta` channel has been enabled, `gql, gql-with-aiohttp, gql-with-all, gql-with-botocore, gql-with-httpx, gql-with-requests, gql-with-websockets` can be installed with `conda`:
 
 ```
 conda install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-requests gql-with-websockets
@@ -113,26 +113,26 @@ mamba install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx
 It is possible to list all of the versions of `gql` available on your platform with `conda`:
 
 ```
-conda search gql --channel conda-forge
+conda search gql --channel conda-forge/label/gql_beta
 ```
 
 or with `mamba`:
 
 ```
-mamba search gql --channel conda-forge
+mamba search gql --channel conda-forge/label/gql_beta
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search gql --channel conda-forge
+mamba repoquery search gql --channel conda-forge/label/gql_beta
 
 # List packages depending on `gql`:
-mamba repoquery whoneeds gql --channel conda-forge
+mamba repoquery whoneeds gql --channel conda-forge/label/gql_beta
 
 # List dependencies of `gql`:
-mamba repoquery depends gql --channel conda-forge
+mamba repoquery depends gql --channel conda-forge/label/gql_beta
 ```
 
 
@@ -154,7 +154,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
