@@ -205,7 +205,6 @@ outputs:
       requires:
         - aiofiles
         - mock
-        - mypy
         - parse
         - pip
         - pytest
@@ -218,7 +217,6 @@ outputs:
         - gql-cli --help
         - gql-cli --version
         - pytest -vv --color=yes --tb=long --cov=gql --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99
-        - mypy -p gql
 
 about:
   home: https://github.com/graphql-python/gql
