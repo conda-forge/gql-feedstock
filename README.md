@@ -3,6 +3,7 @@ About gql-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gql-feedstock/blob/main/LICENSE.txt)
 
+
 About gql
 ---------
 
@@ -15,6 +16,7 @@ Summary: GraphQL client for Python
 This is a GraphQL client for Python. Plays nicely with graphene,
 graphql-core, graphql-js and any other GraphQL implementation compatible
 with the spec.
+
 About gql-with-aiohttp
 ----------------------
 
@@ -23,6 +25,7 @@ About gql-with-aiohttp
 Package license: 
 
 Summary: GraphQL client for Python - aiohttp transport
+
 About gql-with-botocore
 -----------------------
 
@@ -31,6 +34,16 @@ About gql-with-botocore
 Package license: 
 
 Summary: GraphQL client for Python - boto transport
+
+About gql-with-httpx
+--------------------
+
+
+
+Package license: 
+
+Summary: GraphQL client for Python - httpx transport
+
 About gql-with-requests
 -----------------------
 
@@ -39,6 +52,7 @@ About gql-with-requests
 Package license: 
 
 Summary: GraphQL client for Python - requests transport
+
 About gql-with-websockets
 -------------------------
 
@@ -70,6 +84,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--aiohttp-green.svg)](https://anaconda.org/conda-forge/gql-with-aiohttp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-aiohttp.svg)](https://anaconda.org/conda-forge/gql-with-aiohttp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-aiohttp.svg)](https://anaconda.org/conda-forge/gql-with-aiohttp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-aiohttp.svg)](https://anaconda.org/conda-forge/gql-with-aiohttp) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--all-green.svg)](https://anaconda.org/conda-forge/gql-with-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-all.svg)](https://anaconda.org/conda-forge/gql-with-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-all.svg)](https://anaconda.org/conda-forge/gql-with-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-all.svg)](https://anaconda.org/conda-forge/gql-with-all) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--botocore-green.svg)](https://anaconda.org/conda-forge/gql-with-botocore) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-botocore.svg)](https://anaconda.org/conda-forge/gql-with-botocore) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-botocore.svg)](https://anaconda.org/conda-forge/gql-with-botocore) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-botocore.svg)](https://anaconda.org/conda-forge/gql-with-botocore) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--httpx-green.svg)](https://anaconda.org/conda-forge/gql-with-httpx) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-httpx.svg)](https://anaconda.org/conda-forge/gql-with-httpx) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-httpx.svg)](https://anaconda.org/conda-forge/gql-with-httpx) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-httpx.svg)](https://anaconda.org/conda-forge/gql-with-httpx) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--requests-green.svg)](https://anaconda.org/conda-forge/gql-with-requests) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-requests.svg)](https://anaconda.org/conda-forge/gql-with-requests) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-requests.svg)](https://anaconda.org/conda-forge/gql-with-requests) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-requests.svg)](https://anaconda.org/conda-forge/gql-with-requests) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--websockets-green.svg)](https://anaconda.org/conda-forge/gql-with-websockets) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-websockets.svg)](https://anaconda.org/conda-forge/gql-with-websockets) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-websockets.svg)](https://anaconda.org/conda-forge/gql-with-websockets) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-websockets.svg)](https://anaconda.org/conda-forge/gql-with-websockets) |
 
@@ -83,16 +98,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `gql, gql-with-aiohttp, gql-with-all, gql-with-botocore, gql-with-requests, gql-with-websockets` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `gql, gql-with-aiohttp, gql-with-all, gql-with-botocore, gql-with-httpx, gql-with-requests, gql-with-websockets` can be installed with `conda`:
 
 ```
-conda install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-requests gql-with-websockets
+conda install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-requests gql-with-websockets
 ```
 
 or with `mamba`:
 
 ```
-mamba install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-requests gql-with-websockets
+mamba install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-requests gql-with-websockets
 ```
 
 It is possible to list all of the versions of `gql` available on your platform with `conda`:
@@ -139,7 +154,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
