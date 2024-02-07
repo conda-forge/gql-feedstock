@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -50,7 +50,7 @@ outputs:
         - requests >=2.26,<3
         - requests-toolbelt >=1.0.0,<2
         # websockets
-        - websockets >=10,<11
+        - websockets >=10,<12
         # boto
         - botocore >=1.21,<2
     test:
