@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/g/gql/gql-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/g/gql/gql-{{ version }}.tar.gz
   sha256: ccb9c5db543682b28f577069950488218ed65d4ac70bb03b6929aaadaf636de9
 
 build:
   noarch: python
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -20,6 +20,8 @@ requirements:
     - {{ min_python }}
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - echo "tests in outputs"
 
@@ -58,6 +60,7 @@ outputs:
         - gql
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -80,6 +83,7 @@ outputs:
         - gql.transport.aiohttp
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -103,6 +107,7 @@ outputs:
         - gql.transport.httpx
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -129,6 +134,7 @@ outputs:
         - gql.transport.requests
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -153,6 +159,7 @@ outputs:
         - gql.transport.websockets
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -177,6 +184,7 @@ outputs:
         - gql.transport.appsync_auth
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -212,6 +220,7 @@ outputs:
         - pytest-console-scripts
         - pytest-cov
         - vcrpy
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
