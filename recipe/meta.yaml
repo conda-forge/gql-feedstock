@@ -177,6 +177,8 @@ outputs:
         - {{ pin_subpackage('gql-with-websockets', exact=True) }}
         - {{ pin_subpackage('gql', exact=True) }}
     test:
+      files:
+        - run_gql_with_all.py
       source_files:
         - tests
       requires:
@@ -194,7 +196,7 @@ outputs:
         - pip check
         - gql-cli --help
         - gql-cli --version
-        - pytest -vv --color=yes --tb=long --cov=gql --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99
+        - python run_gql_with_all.py
 
 about:
   home: https://github.com/graphql-python/gql
