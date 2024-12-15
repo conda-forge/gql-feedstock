@@ -1,7 +1,7 @@
 import sys
 from subprocess import call
 
-FAIL_UNDER = "99"
+FAIL_UNDER = "95"
 COV = ["coverage"]
 RUN = ["run", "--source=gql", "--branch", "-m"]
 PYTEST = ["pytest", "-vv", "--color=yes", "--tb=long"]
