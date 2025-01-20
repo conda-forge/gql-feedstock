@@ -1,5 +1,5 @@
-{% set version = "3.6.0b0" %}
-{% set min_python = "python >=3.7" %}
+{% set version = "3.6.0b3" %}
+{% set min_python = "python >=3.8" %}
 
 package:
   name: gql-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/gql/gql-{{ version }}.tar.gz
-  sha256: d2e8193ec9b0a038c93b63836e29564cafe2bb365662f9d1dd99f3cee073ed2d
+  sha256: 5376e4d8eed4d052bcfb35fdcfccf0db1145ea250e14516ceface2611e0b5e19
 
 build:
   noarch: python
