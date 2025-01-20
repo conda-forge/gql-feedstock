@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/g/gql/gql-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/g/gql/gql-{{ version }}.tar.gz
   sha256: 5376e4d8eed4d052bcfb35fdcfccf0db1145ea250e14516ceface2611e0b5e19
 
 build:
