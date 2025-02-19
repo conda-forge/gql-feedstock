@@ -12,7 +12,7 @@ SKIPS = [
 
 
 SKIP_OR = " or ".join(SKIPS)
-K = ["-k", f"not ({SKIP_OR})"]
+K = ["-k", f"not ({SKIP_OR})"] if SKIPS else []
 
 
 if __name__ == "__main__":
