@@ -5,7 +5,7 @@
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
 package:
-  name: gql-split
+  name: gql
   version: {{ version }}
 
 source:
@@ -13,8 +13,12 @@ source:
   sha256: 6781f00de33cd2049d064124ba5ffd821124e2fd6e87c557c6f592958c979d96
 
 build:
+  number: 2
   noarch: python
-  number: 1
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  entry_points:
+    - gql-cli = gql.cli:gql_cli
 
 requirements:
   host:
@@ -23,61 +27,42 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-
+    - graphql-core >=3.3.0a3,<3.4
+    - yarl >=1.6,<2.0
+    - backoff >=1.11.1,<3.0
+    - anyio >=3.0,<5
+  run_constrained:
+    # aiohttp
+    - aiohttp>=3.8.0,<4
+    # httpx
+    - httpx >=0.27,<1
+    # requests
+    - requests >=2.26,<3
+    - requests-toolbelt >=1.0.0,<2
+    # websockets
+    - websockets >=10.1,<14
+    # boto
+    - botocore >=1.21,<2
 test:
+  requires:
+    - pip
+    - python {{ python_min }}
+  imports:
+    - gql
   commands:
-    - echo "tests in outputs"
+    - pip check
+    - gql-cli --help
+    - gql-cli --version
 
 outputs:
   - name: gql
-    build:
-      noarch: python
-      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-      entry_points:
-      - gql-cli = gql.cli:gql_cli
-
-    requirements:
-      host:
-        - {{ min_python }}
-        - setuptools
-        - pip
-      run:
-        - {{ min_python }}
-        - graphql-core >=3.3.0a3,<3.4
-        - yarl >=1.6,<2.0
-        - backoff >=1.11.1,<3.0
-        - anyio >=3.0,<5
-      run_constrained:
-        # aiohttp
-        - aiohttp>=3.8.0,<4
-        # httpx
-        - httpx >=0.27,<1
-        # requests
-        - requests >=2.26,<3
-        - requests-toolbelt >=1.0.0,<2
-        # websockets
-        - websockets >=10.1,<14
-        # boto
-        - botocore >=1.21,<2
-    test:
-      imports:
-        - gql
-      requires:
-        - pip
-      commands:
-        - pip check
-        - gql-cli --help
-        - gql-cli --version
 
   - name: gql-with-aiohttp
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - python >={{ python_min }}
         - aiohttp
     test:
       imports:
@@ -85,6 +70,7 @@ outputs:
         - gql.transport.aiohttp
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -94,13 +80,10 @@ outputs:
 
   - name: gql-with-httpx
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - python >={{ python_min }}
         - httpx
     test:
       imports:
@@ -108,6 +91,7 @@ outputs:
         - gql.transport.httpx
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -117,13 +101,10 @@ outputs:
 
   - name: gql-with-requests
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - python >={{ python_min }}
         - requests
         - requests-toolbelt
         - urllib3
@@ -133,6 +114,7 @@ outputs:
         - gql.transport.requests
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -142,13 +124,10 @@ outputs:
 
   - name: gql-with-websockets
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - python >={{ python_min }}
         - websockets
     test:
       imports:
@@ -156,6 +135,7 @@ outputs:
         - gql.transport.websockets
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -165,13 +145,10 @@ outputs:
 
   - name: gql-with-botocore
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - python >={{ python_min }}
         - botocore
     test:
       imports:
@@ -179,6 +156,7 @@ outputs:
         - gql.transport.appsync_auth
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
@@ -188,10 +166,8 @@ outputs:
 
   - name: gql-with-all
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql-with-aiohttp', exact=True) }}
         - {{ pin_subpackage('gql-with-httpx', exact=True) }}
@@ -199,8 +175,9 @@ outputs:
         - {{ pin_subpackage('gql-with-requests', exact=True) }}
         - {{ pin_subpackage('gql-with-websockets', exact=True) }}
         - {{ pin_subpackage('gql', exact=True) }}
-        - python >={{ python_min }}
     test:
+      files:
+        - run_gql_with_all.py
       source_files:
         - tests
       requires:
@@ -213,16 +190,12 @@ outputs:
         - pytest-console-scripts
         - pytest-cov
         - vcrpy
+        - python {{ python_min }}
       commands:
         - pip check
         - gql-cli --help
         - gql-cli --version
-        {% set skips = [
-          "appsync_subscription_api_key_unauthorized",
-          "appsync_subscription_server_sending_an_error_without_an_id",
-          "websocket_connect_failed_with_authentication_in_connection_init",
-        ] %}
-        - pytest -vv --color=yes --tb=long --cov=gql --cov-report=term-missing:skip-covered --no-cov-on-fail -k "not ({{ skips | join(" or ") }})" --cov-fail-under=99
+        - python run_gql_with_all.py
 
 about:
   home: https://github.com/graphql-python/gql
