@@ -13,7 +13,7 @@ source:
   sha256: 6781f00de33cd2049d064124ba5ffd821124e2fd6e87c557c6f592958c979d96
 
 build:
-  number: 2
+  number: 3
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -33,7 +33,7 @@ requirements:
     - anyio >=3.0,<5
   run_constrained:
     # aiohttp
-    - aiohttp>=3.8.0,<4
+    - aiohttp >=3.8.0,<4
     # httpx
     - httpx >=0.27,<1
     # requests
