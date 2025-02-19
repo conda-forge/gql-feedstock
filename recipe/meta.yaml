@@ -1,5 +1,8 @@
 {% set version = "3.6.0b4" %}
-{% set min_python = "python >=3.9" %}
+
+{% set python_min = python_min | default("3.9") %}
+
+{% set PYTHON = PYTHON | default("$PYTHON") %}
 
 package:
   name: gql-split
@@ -11,14 +14,15 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - {{ min_python }}
+    - pip
+    - python {{ python_min }}
     - setuptools
   run:
-    - {{ min_python }}
+    - python >={{ python_min }}
 
 test:
   commands:
@@ -70,10 +74,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - {{ min_python }}
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - {{ min_python }}
+        - python >={{ python_min }}
         - aiohttp
     test:
       imports:
@@ -93,10 +97,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - {{ min_python }}
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - {{ min_python }}
+        - python >={{ python_min }}
         - httpx
     test:
       imports:
@@ -116,10 +120,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - {{ min_python }}
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - {{ min_python }}
+        - python >={{ python_min }}
         - requests
         - requests-toolbelt
         - urllib3
@@ -141,10 +145,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - {{ min_python }}
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - {{ min_python }}
+        - python >={{ python_min }}
         - websockets
     test:
       imports:
@@ -164,10 +168,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - {{ min_python }}
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - {{ min_python }}
+        - python >={{ python_min }}
         - botocore
     test:
       imports:
@@ -187,7 +191,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - {{ min_python }}
+        - python {{ python_min }}
       run:
         - {{ pin_subpackage('gql-with-aiohttp', exact=True) }}
         - {{ pin_subpackage('gql-with-httpx', exact=True) }}
@@ -195,7 +199,7 @@ outputs:
         - {{ pin_subpackage('gql-with-requests', exact=True) }}
         - {{ pin_subpackage('gql-with-websockets', exact=True) }}
         - {{ pin_subpackage('gql', exact=True) }}
-        - {{ min_python }}
+        - python >={{ python_min }}
     test:
       source_files:
         - tests
