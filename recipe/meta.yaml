@@ -13,7 +13,7 @@ source:
   sha256: 6781f00de33cd2049d064124ba5ffd821124e2fd6e87c557c6f592958c979d96
 
 build:
-  number: 3
+  number: 4
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -43,6 +43,7 @@ requirements:
     - websockets >=10.1,<14
     # boto
     - botocore >=1.21,<2
+
 test:
   requires:
     - pip
