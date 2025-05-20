@@ -1,4 +1,4 @@
-{% set version = "3.5.2" %}
+{% set version = "3.5.3" %}
 
 {% set python_min = python_min | default("3.9") %}
 
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/g/gql/gql-{{ version }}.tar.gz
-  sha256: 07e1325b820c8ba9478e95de27ce9f23250486e7e79113dbb7659a442dc13e74
+  sha256: 393b8c049d58e0d2f5461b9d738a2b5f904186a40395500b4a84dd092d56e42b
 
 build:
   number: 0
