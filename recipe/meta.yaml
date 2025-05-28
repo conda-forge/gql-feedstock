@@ -1,4 +1,4 @@
-{% set version = "3.6.0b4" %}
+{% set version = "4.0.0b0" %}
 
 {% set python_min = python_min | default("3.9") %}
 
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/g/gql/gql-{{ version }}.tar.gz
-  sha256: 6781f00de33cd2049d064124ba5ffd821124e2fd6e87c557c6f592958c979d96
+  sha256: 894712cfb90365e92b5c7f01fdfa0037a8cb0abd616ee1281d36a38a341a3e96
 
 build:
-  number: 5
+  number: 0
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -33,16 +33,18 @@ requirements:
     - anyio >=3.0,<5
   run_constrained:
     # aiohttp
-    - aiohttp >=3.8.0,<4
+    - aiohttp >=3.11.2,<4
     # httpx
     - httpx >=0.27,<1
     # requests
     - requests >=2.26,<3
     - requests-toolbelt >=1.0.0,<2
     # websockets
-    - websockets >=10.1,<14
+    - websockets >=14.2,<16
     # boto
     - botocore >=1.21,<2
+    # aiofiles
+    - aiofiles
 
 test:
   requires:
