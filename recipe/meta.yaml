@@ -40,7 +40,7 @@ requirements:
     - requests >=2.26,<3
     - requests-toolbelt >=1.0.0,<2
     # websockets
-    - websockets >=10,<12
+    - websockets >=14.2,<16
     # boto
     - botocore >=1.21,<2
 
