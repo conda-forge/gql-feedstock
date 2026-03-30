@@ -1,4 +1,4 @@
-{% set version = "4.3.0b0" %}
+{% set version = "4.3.0b1" %}
 
 {% set python_min = python_min | default("3.9") %}
 
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/g/gql/gql-{{ version }}.tar.gz
-  sha256: a15bca3059283591256f7a0512657276dc49f5b5d9cbd1744b5f9dbb1ad7a598
+  sha256: 93d114bf48d68c589a21d1cf64252ef904bc3b4006e9aff8af996078fc1b4545
 
 build:
   number: 0
@@ -27,7 +27,7 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - graphql-core >=3.3.0a3,<3.4
+    - graphql-core >=3.3.0a3,<3.3.0a12
     - yarl >=1.6,<2.0
     - tenacity >=9.1.2,<10.0
     - anyio >=3.0,<5
