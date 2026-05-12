@@ -13,7 +13,7 @@ source:
   sha256: f22980844eb6a7c0266ffc70f111b9c7e7c7c13da38c3b439afc7eab3d7c9c8e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -39,8 +39,6 @@ requirements:
     # requests
     - requests >=2.26,<3
     - requests-toolbelt >=1.0.0,<2
-    # websockets
-    - websockets >=14.2,<16
     # boto
     - botocore >=1.21,<2
     # aiofiles
@@ -131,7 +129,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - websockets
+        - websockets >=14.2,<16
     test:
       imports:
         - gql
