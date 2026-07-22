@@ -1,6 +1,6 @@
-{% set version = "4.3.0b3" %}
+{% set version = "4.4.0b0" %}
 
-{% set python_min = python_min | default("3.9") %}
+{% set python_min = python_min | default("3.10") %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/g/gql/gql-{{ version }}.tar.gz
-  sha256: 511bdbd3b608b3f7ca8987fbaeff7fd6f17bb07fd71592f98229401593bbf1f8
+  sha256: 78ca532335ca4716fa56ae68676d9652d7efd88080a0b35c97bbddd9b6a51151
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -88,6 +88,27 @@ outputs:
     about:
       summary: GraphQL client for Python - httpx transport
 
+  - name: gql-with-httpx2
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage('gql', exact=True) }}
+        - httpx2 >=2.0.0,<3
+    test:
+      imports:
+        - gql
+        - gql.transport.httpx
+      requires:
+        - pip
+        - python {{ python_min }}
+      commands:
+        - pip check
+        - gql-cli --help
+        - gql-cli --version
+    about:
+      summary: GraphQL client for Python - httpx2 transport
+
   - name: gql-with-requests
     build:
       noarch: generic
@@ -159,7 +180,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('gql-with-aiohttp', exact=True) }}
-        - {{ pin_subpackage('gql-with-httpx', exact=True) }}
+        - {{ pin_subpackage('gql-with-httpx2', exact=True) }}
         - {{ pin_subpackage('gql-with-botocore', exact=True) }}
         - {{ pin_subpackage('gql-with-requests', exact=True) }}
         - {{ pin_subpackage('gql-with-websockets', exact=True) }}
@@ -176,7 +197,7 @@ outputs:
         - packaging
         - pip
         - pytest
-        - pytest-asyncio >=1.2.0,<1.3
+        - pytest-asyncio >=1.4.0,<1.4.1
         - pytest-console-scripts
         - pytest-cov
         - vcrpy
