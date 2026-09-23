@@ -109,31 +109,73 @@ conda config --add channels conda-forge/label/gql_beta
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/gql_beta` channel has been enabled, `gql, gql-with-aiohttp, gql-with-all, gql-with-botocore, gql-with-httpx, gql-with-httpx2, gql-with-requests, gql-with-websockets` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-httpx2 gql-with-requests gql-with-websockets
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-httpx2 gql-with-requests gql-with-websockets
 ```
 
-It is possible to list all of the versions of `gql` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-httpx2 gql-with-requests gql-with-websockets
+# for installing globally
+pixi global install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-httpx2 gql-with-requests gql-with-websockets
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `gql` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search gql --channel conda-forge/label/gql_beta
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search gql --channel conda-forge/label/gql_beta
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search gql --channel conda-forge/label/gql_beta
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -145,6 +187,8 @@ mamba repoquery whoneeds gql --channel conda-forge/label/gql_beta
 # List dependencies of `gql`:
 mamba repoquery depends gql --channel conda-forge/label/gql_beta
 ```
+
+</details>
 
 
 About conda-forge
