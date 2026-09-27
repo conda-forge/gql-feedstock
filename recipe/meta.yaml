@@ -1,6 +1,6 @@
-{% set version = "4.0.0" %}
+{% set version = "4.4.0" %}
 
-{% set python_min = python_min | default("3.9") %}
+{% set python_min = python_min | default("3.10") %}
 
 {% set PYTHON = PYTHON | default("$PYTHON") %}
 
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/g/gql/gql-{{ version }}.tar.gz
-  sha256: f22980844eb6a7c0266ffc70f111b9c7e7c7c13da38c3b439afc7eab3d7c9c8e
+  sha256: e54fe470d51347ceb46a04fc88c5553695d2d8c86b05bef13aeee8b8f2d5f61a 
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -27,9 +27,9 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - graphql-core >=3.2,<3.3
+    - graphql-core >=3.3.0a3,<3.4
     - yarl >=1.6,<2.0
-    - backoff >=1.11.1,<3.0
+    - tenacity >=9.1.2,<10.0
     - anyio >=3.0,<5
 
 test:
@@ -88,6 +88,27 @@ outputs:
     about:
       summary: GraphQL client for Python - httpx transport
 
+  - name: gql-with-httpx2
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage('gql', exact=True) }}
+        - httpx2 >=2.0.0,<3
+    test:
+      imports:
+        - gql
+        - gql.transport.httpx
+      requires:
+        - pip
+        - python {{ python_min }}
+      commands:
+        - pip check
+        - gql-cli --help
+        - gql-cli --version
+    about:
+      summary: GraphQL client for Python - httpx2 transport
+
   - name: gql-with-requests
     build:
       noarch: generic
@@ -117,7 +138,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('gql', exact=True) }}
-        - websockets >=14.2,<16
+        - websockets >=14.2,<17
     test:
       imports:
         - gql
@@ -159,7 +180,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('gql-with-aiohttp', exact=True) }}
-        - {{ pin_subpackage('gql-with-httpx', exact=True) }}
+        - {{ pin_subpackage('gql-with-httpx2', exact=True) }}
         - {{ pin_subpackage('gql-with-botocore', exact=True) }}
         - {{ pin_subpackage('gql-with-requests', exact=True) }}
         - {{ pin_subpackage('gql-with-websockets', exact=True) }}
@@ -173,9 +194,10 @@ outputs:
         - aiofiles
         - mock
         - parse
+        - packaging
         - pip
         - pytest
-        - pytest-asyncio >=0.16.0,<0.19.0
+        - pytest-asyncio >=1.4.0,<1.4.1
         - pytest-console-scripts
         - pytest-cov
         - vcrpy
