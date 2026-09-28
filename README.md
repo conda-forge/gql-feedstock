@@ -7,11 +7,15 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gql-feedstock/b
 About gql
 ---------
 
-Home: https://github.com/graphql-python/gql
+Home: https://pypi.org/project/gql
 
 Package license: MIT
 
 Summary: GraphQL client for Python
+
+Development: https://github.com/graphql-python/gql
+
+Documentation: https://gql.readthedocs.io/
 
 This is a GraphQL client for Python. Plays nicely with graphene,
 graphql-core, graphql-js and any other GraphQL implementation compatible
@@ -20,47 +24,104 @@ with the spec.
 About gql-with-aiohttp
 ----------------------
 
+Home: https://pypi.org/project/gql
 
-
-Package license: 
+Package license: MIT
 
 Summary: GraphQL client for Python - aiohttp transport
+
+Development: https://github.com/graphql-python/gql
+
+Documentation: https://gql.readthedocs.io/
+
+This is a GraphQL client for Python. Plays nicely with graphene,
+graphql-core, graphql-js and any other GraphQL implementation compatible
+with the spec.
 
 About gql-with-botocore
 -----------------------
 
+Home: https://pypi.org/project/gql
 
-
-Package license: 
+Package license: MIT
 
 Summary: GraphQL client for Python - boto transport
+
+Development: https://github.com/graphql-python/gql
+
+Documentation: https://gql.readthedocs.io/
+
+This is a GraphQL client for Python. Plays nicely with graphene,
+graphql-core, graphql-js and any other GraphQL implementation compatible
+with the spec.
 
 About gql-with-httpx
 --------------------
 
+Home: https://pypi.org/project/gql
 
+Package license: MIT
 
-Package license: 
+Summary: GraphQL client for Python - httpx transport (deprecated)
 
-Summary: GraphQL client for Python - httpx transport
+Development: https://github.com/graphql-python/gql
+
+Documentation: https://gql.readthedocs.io/
+
+This is a GraphQL client for Python. Plays nicely with graphene,
+graphql-core, graphql-js and any other GraphQL implementation compatible
+with the spec.
+
+About gql-with-httpx2
+---------------------
+
+Home: https://pypi.org/project/gql
+
+Package license: MIT
+
+Summary: GraphQL client for Python - httpx2 transport
+
+Development: https://github.com/graphql-python/gql
+
+Documentation: https://gql.readthedocs.io/
+
+This is a GraphQL client for Python. Plays nicely with graphene,
+graphql-core, graphql-js and any other GraphQL implementation compatible
+with the spec.
 
 About gql-with-requests
 -----------------------
 
+Home: https://pypi.org/project/gql
 
-
-Package license: 
+Package license: MIT
 
 Summary: GraphQL client for Python - requests transport
+
+Development: https://github.com/graphql-python/gql
+
+Documentation: https://gql.readthedocs.io/
+
+This is a GraphQL client for Python. Plays nicely with graphene,
+graphql-core, graphql-js and any other GraphQL implementation compatible
+with the spec.
 
 About gql-with-websockets
 -------------------------
 
+Home: https://pypi.org/project/gql
 
-
-Package license: 
+Package license: MIT
 
 Summary: GraphQL client for Python - websocket transport
+
+Development: https://github.com/graphql-python/gql
+
+Documentation: https://gql.readthedocs.io/
+
+This is a GraphQL client for Python. Plays nicely with graphene,
+graphql-core, graphql-js and any other GraphQL implementation compatible
+with the spec.
 
 Current build status
 ====================
@@ -69,7 +130,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/gql-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/gql-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>
@@ -84,6 +147,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--all-green.svg)](https://anaconda.org/conda-forge/gql-with-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-all.svg)](https://anaconda.org/conda-forge/gql-with-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-all.svg)](https://anaconda.org/conda-forge/gql-with-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-all.svg)](https://anaconda.org/conda-forge/gql-with-all) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--botocore-green.svg)](https://anaconda.org/conda-forge/gql-with-botocore) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-botocore.svg)](https://anaconda.org/conda-forge/gql-with-botocore) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-botocore.svg)](https://anaconda.org/conda-forge/gql-with-botocore) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-botocore.svg)](https://anaconda.org/conda-forge/gql-with-botocore) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--httpx-green.svg)](https://anaconda.org/conda-forge/gql-with-httpx) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-httpx.svg)](https://anaconda.org/conda-forge/gql-with-httpx) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-httpx.svg)](https://anaconda.org/conda-forge/gql-with-httpx) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-httpx.svg)](https://anaconda.org/conda-forge/gql-with-httpx) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--httpx2-green.svg)](https://anaconda.org/conda-forge/gql-with-httpx2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-httpx2.svg)](https://anaconda.org/conda-forge/gql-with-httpx2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-httpx2.svg)](https://anaconda.org/conda-forge/gql-with-httpx2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-httpx2.svg)](https://anaconda.org/conda-forge/gql-with-httpx2) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--requests-green.svg)](https://anaconda.org/conda-forge/gql-with-requests) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-requests.svg)](https://anaconda.org/conda-forge/gql-with-requests) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-requests.svg)](https://anaconda.org/conda-forge/gql-with-requests) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-requests.svg)](https://anaconda.org/conda-forge/gql-with-requests) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gql--with--websockets-green.svg)](https://anaconda.org/conda-forge/gql-with-websockets) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gql-with-websockets.svg)](https://anaconda.org/conda-forge/gql-with-websockets) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gql-with-websockets.svg)](https://anaconda.org/conda-forge/gql-with-websockets) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gql-with-websockets.svg)](https://anaconda.org/conda-forge/gql-with-websockets) |
 
@@ -97,31 +161,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `gql, gql-with-aiohttp, gql-with-all, gql-with-botocore, gql-with-httpx, gql-with-requests, gql-with-websockets` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
-conda install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-requests gql-with-websockets
+conda install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-httpx2 gql-with-requests gql-with-websockets
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
-mamba install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-requests gql-with-websockets
+mamba install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-httpx2 gql-with-requests gql-with-websockets
 ```
 
-It is possible to list all of the versions of `gql` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-httpx2 gql-with-requests gql-with-websockets
+# for installing globally
+pixi global install gql gql-with-aiohttp gql-with-all gql-with-botocore gql-with-httpx gql-with-httpx2 gql-with-requests gql-with-websockets
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `gql` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search gql --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search gql --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search gql --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -133,6 +239,8 @@ mamba repoquery whoneeds gql --channel conda-forge
 # List dependencies of `gql`:
 mamba repoquery depends gql --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
