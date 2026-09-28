@@ -132,7 +132,7 @@ outputs:
       - python:
           imports:
             - gql
-            - gql.transport.httpx2
+            - gql.transport.httpx
           pip_check: true
           python_version:
             - ${{ python_min }}.*
