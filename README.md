@@ -62,7 +62,7 @@ Home: https://pypi.org/project/gql
 
 Package license: MIT
 
-Summary: GraphQL client for Python - httpx transport
+Summary: GraphQL client for Python - httpx transport (deprecated)
 
 Development: https://github.com/graphql-python/gql
 
