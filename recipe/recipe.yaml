@@ -118,7 +118,7 @@ outputs:
             - ${{ python_min }}.*
             - ${{ python_check_max }}.*
     about:
-      summary: ${{ summary }} - httpx transport
+      summary: ${{ summary }} - httpx transport (deprecated)
 
   - package:
       name: gql-with-httpx2
@@ -188,7 +188,6 @@ outputs:
     requirements:
       run:
         - ${{ pin_subpackage("gql-with-aiohttp", exact=True) }}
-        - ${{ pin_subpackage("gql-with-httpx", exact=True) }}
         - ${{ pin_subpackage("gql-with-httpx2", exact=True) }}
         - ${{ pin_subpackage("gql-with-botocore", exact=True) }}
         - ${{ pin_subpackage("gql-with-requests", exact=True) }}
